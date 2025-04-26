@@ -1,6 +1,6 @@
 # tiny-imagenet-torch
 
-A PyTorch-compatible implementation of the TinyImageNet dataset, following the pattern of torchvision datasets like MNIST and CIFAR-10.
+A PyTorch-compatible implementation of the TinyImageNet dataset, following the pattern of torchvision datasets like MNIST, FashionMNIST, and CIFAR-10.
 
 ## About TinyImageNet
 
