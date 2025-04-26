@@ -61,7 +61,6 @@ for images, labels in train_loader:
 - 200 classes from ImageNet
 - 500 training images per class (100,000 total)
 - 50 validation images per class (10,000 total)
-- 50 test images per class (10,000 total)
 - All images are 64×64 color images
 
 ## License
