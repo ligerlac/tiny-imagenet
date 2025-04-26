@@ -4,7 +4,7 @@ A PyTorch-compatible implementation of the TinyImageNet dataset, following the p
 
 ## About TinyImageNet
 
-TinyImageNet is a subset of the ImageNet dataset, containing 200 classes with 500 training images, 50 validation images, and 50 test images per class. Each image is 64×64 pixels.
+Tiny ImageNet contains 100000 images of 200 classes (500 for each class) downsized to 64×64 colored images. Each class has 500 training images, 50 validation images and 50 test images. More information can be found here: https://paperswithcode.com/dataset/tiny-imagenet. This implementation ingores the unlabeled test imagesto match (F)MNIST and CIFAR-10's structure.
 
 ## Installation
 

@@ -86,8 +86,7 @@ class TinyImageNet(VisionDataset):
         base_path = os.path.join(self.root, self.base_folder)
         
         if self.train:
-            # Process training data (including train and val splits for TinyImageNet)
-            # 1. Add official training images
+            # Process training data
             for class_id in self.class_to_idx.keys():
                 class_index = self.class_to_idx[class_id]
                 target_dir = os.path.join(base_path, 'train', class_id, 'images')
@@ -97,8 +96,8 @@ class TinyImageNet(VisionDataset):
                             path = os.path.join(target_dir, filename)
                             image_paths.append(path)
                             targets.append(class_index)
-            
-            # 2. Add validation images
+        else:
+            # Process validation data (we ignore test data as it has no labels)
             val_annotations = os.path.join(base_path, 'val', 'val_annotations.txt')
             with open(val_annotations, 'r') as f:
                 for line in f.readlines():
@@ -108,16 +107,6 @@ class TinyImageNet(VisionDataset):
                     path = os.path.join(base_path, 'val', 'images', filename)
                     image_paths.append(path)
                     targets.append(self.class_to_idx[class_id])
-        else:
-            # Process test data
-            test_dir = os.path.join(base_path, 'test', 'images')
-            if os.path.isdir(test_dir):
-                for filename in os.listdir(test_dir):
-                    if filename.endswith('.JPEG'):
-                        path = os.path.join(test_dir, filename)
-                        image_paths.append(path)
-                        # Use -1 as placeholder for test set (no labels)
-                        targets.append(-1)
         
         # Convert targets to tensor for easy filtering
         return image_paths, torch.tensor(targets)
