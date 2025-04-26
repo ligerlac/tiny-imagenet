@@ -14,3 +14,5 @@ dist/
 .env/
 .cache/
 coverage.xml
+.coverage
+tests/.coverage
