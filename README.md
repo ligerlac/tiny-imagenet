@@ -15,7 +15,7 @@ pip install tiny-imagenet-torch
 Or install from source:
 
 ```bash
-git clone https://github.com/yourusername/tiny-imagenet-torch.git
+git clone https://github.com/ligerlac/tiny-imagenet-torch.git
 cd tiny-imagenet-torch
 pip install -e .
 ```
@@ -28,11 +28,8 @@ from torch.utils.data import DataLoader
 from torchvision import transforms
 from tiny_imagenet_torch import TinyImageNet
 
-# Define transformations
-transform = transforms.Compose([
-    transforms.ToTensor(),
-    transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225))
-])
+# Simple transformation - just convert to tensor
+transform = transforms.ToTensor()
 
 # Create dataset
 train_dataset = TinyImageNet(
