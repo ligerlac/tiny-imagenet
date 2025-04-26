@@ -13,3 +13,4 @@ dist/
 .env
 .env/
 .cache/
+coverage.xml
